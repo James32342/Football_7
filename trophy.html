@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Trophy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #001f3f);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #007acc;
+    }
+
+    form {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 2px solid #007acc;
+      background-color: #0a0a0a;
+      color: white;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    input::placeholder {
+      color: #89cfff;
+      opacity: 0.75;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00bfff;
+      box-shadow: 0 0 10px #00bfff;
+    }
+
+    .b {
+  background-color: #00bfff;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 0 20px #00bfff;
+}
+
+.b:hover {
+  background-color: #0099cc;
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+
+  <h2>TROPHY</h2>
+
+  <form action="trophy.php" method="POST">
+    <input type="hidden" name="id" id="playerId">
+    <input type="text" name="name" placeholder="Trophy Name" id ="name"required>
+    <input type="text" name="type" placeholder="Domestic / Continental / Cup / League" id ="type"required>
+    <input type="text" name="association" placeholder="Association" id ="association"required>
+    <input type="text" name="currentholders" placeholder="Current Holders" id ="currentholders"required>
+    <input type="text" name="venue" placeholder="Final Venue" id ="venue"required>
+    <button type="submit" value="Add Trophy" class="b">Add Trophy</button>
+    <button type="button" value="view-btn"  class="b" onclick="window.location.href='trophydispl.php'">View</button>
+  </form>
+  <script>
+    function getParam(param) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(param) || '';
+    }
+
+   
+        const id = getParam('id');
+        if (id) {
+            document.getElementById('playerId').value = id;
+            document.getElementById('name').value = getParam('name');
+            document.getElementById('type').value = getParam('type');
+            document.getElementById('association').value = getParam('association');
+            document.getElementById('currentholders').value = getParam('currentholders');
+            document.getElementById('venue').value = getParam('venue');
+       
+        }
+    
+</script>
+
+
+</body>
+</html>

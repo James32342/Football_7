@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Player</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 38px;
+      margin-bottom: 30px;
+      text-align: center;
+      background: linear-gradient(90deg, #9d4edd, #7b2cbf, #5a189a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px #7b2cbf;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px 40px;
+      border-radius: 15px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 0 25px rgba(125, 0, 255, 0.2);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 2px solid #9d4edd;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    input::placeholder {
+      color: #cfa8ff;
+      opacity: 0.7;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #b5179e;
+      box-shadow: 0 0 12px #b5179e;
+      background-color: #2a003d;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 0 20px #7b2cbf;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #b5179e, #7209b7);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #9d4edd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Manage Player</h2>
+
+  <form action="players.php" method="POST">
+    <input type="hidden" name="id" id="playerId">
+    <input type="text" name="name" placeholder="Player Name" id="playerName">
+    <input type="number" name="age" placeholder="Age" id="playerAge">
+    <input type="text" name="position" placeholder="Position" id="playerPosition">
+    <input type="text" name="club" placeholder="Club" id="playerClub">
+    <input type="text" name="nationality" placeholder="Nationality" id="playerNationality">
+    <input type="text" name="transfervalue" placeholder="Transfer Value" id="playerTransfer">
+    
+
+    <button type="submit" class="btn">Submit</button>
+
+    <button type="button" class="btn" onclick="window.location.href='playersdispl.php'">View</button>
+
+    
+
+  </form>
+
+  <script>
+    function getParam(param) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(param) || '';
+    }
+
+    // Pre-fill form if updating
+    const id = getParam('id');
+    if (id) {
+      document.getElementById('playerId').value = id;
+      document.getElementById('playerName').value = getParam('name');
+      document.getElementById('playerAge').value = getParam('age');
+      document.getElementById('playerPosition').value = getParam('position');
+      document.getElementById('playerClub').value = getParam('club');
+      document.getElementById('playerNationality').value = getParam('nationality');
+      document.getElementById('playerTransfer').value = getParam('transfervalue');
+
+    
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Player</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000, #003319);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 20px;
+}
+
+h2 {
+    font-size: 42px;
+    margin: 0px 0 30px 0;
+    text-align: center;
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #007f4f;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(0, 255, 140, 0.3);
+    border: 1px solid rgba(0, 255, 140, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+input, select {
+    width: 100%;
+    padding: 9px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 2px solid #00cc66;
+    background-color: #0a0a0a;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+input::placeholder {
+    color: #88ffcc;
+    opacity: 0.75;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+    background-color: #1a1a1a;
+}
+
+button, .b, .view-btn, .clear-btn, .submit-btn {
+    background: linear-gradient(90deg, #00cc66, #006633);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 0 20px #00ff99;
+}
+
+button:hover, .b:hover, .view-btn:hover, .clear-btn:hover, .submit-btn:hover {
+    background: linear-gradient(90deg, #00e68a, #007f4f);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00cc66;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2>TRANSFERS</h2>
+
+    <form action="transfers.php" method="POST">
+        <input type="hidden" name="id" id="playerId">
+        <input type="text" name="name" placeholder="Player Name"id="name">
+        <input type="number" name="age" placeholder="Age"id="age">
+        <input type="text" name="position" placeholder="Position"id="position">
+        <input type="text" name="clubfrom" placeholder="Club From"id="clubfrom">
+        <input type="text" name="clubto" placeholder="Club To"id="clubto">
+        <input type="text" name="wage" placeholder="Wages" id="wage">
+        <input type="text" name="transferfee" placeholder="Transfer Fee" id="transferfee">
+        <button class="c submit-btn" type="submit">Add player</button>
+        <button class="c view-btn" type="button" onclick="window.location.href='transfersdispl.php'">View</button>
+       
+
+    </form>
+    <script>
+        function getParam(param) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(param) || '';
+        }
+    
+       
+            const id = getParam('id');
+            if (id) {
+                document.getElementById('playerId').value = id;
+                document.getElementById('name').value = getParam('name');
+                document.getElementById('age').value = getParam('age');
+                document.getElementById('position').value = getParam('position');
+                document.getElementById('clubfrom').value = getParam('clubfrom');
+                document.getElementById('clubto').value = getParam('clubto');
+                document.getElementById('wage').value = getParam('wage');
+                document.getElementById('transferfee').value = getParam('transferfee');
+            }
+        
+    </script>
+
+</body>
+</html>

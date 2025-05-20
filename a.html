@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d1117;
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: #161b22;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .text {
+            font-family: 'Orbitron', sans-serif;
+            text-align: right;
+            color: #c9d1d9;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .bot {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .item {
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .item:hover {
+            color: #640d93;
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .dynamicimg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .dynamicimg img {
+            border-radius: 12px;
+            height: 465px;
+            width: auto;
+            max-width: 90vw;
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .dynamicimg img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(88,166,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .bot {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+        .news-ticker {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #161b22;
+    color: #ffffff;
+    padding: 10px 0;
+    overflow: hidden;
+    z-index: 1000;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+
+.news-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll-left 45s linear infinite;
+    font-size: 1rem;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="top">
+            <div class="logo">
+                <img src="./images/footballlogo.png" alt="Logo">
+            </div>
+            <div class="text">
+                Attack wins you games<br>Defence wins you titles!
+            </div>
+        </div>
+        <div class="bot">
+            <a href="clubs.html"><h1 class="item">CLUBS</h1></a>
+            <a href="players.html"><h1 class="item">PLAYERS</h1></a>
+            <a href="stats.html"><h1 class="item">STATISTICS</h1></a> 
+            <a href="trophy.html"><h1 class="item">TROPHY</h1></a>
+            <a href="transfers.html"><h1 class="item">TRANSFERS</h1></a>
+            <a href="logs.php"><h1 class="item">LOGS</h1></a>
+        </div>
+    </nav>
+
+    <div class="dynamicimg">
+        <img src="./images/image1.png" class="dyn" alt="Image 1">
+        <img src="./images/image6.png" class="dyn" alt="Image 2">
+        <img src="./images/image7.png" class="dyn" alt="Image 3">
+    </div>
+
+    <script src="app.js"></script>
+    <div class="news-ticker">
+        <div class="news-ticker">
+            <div class="news-content">
+                ⚽ Breaking: Cr7 scores a hat-trick! &nbsp;&nbsp;&nbsp; 
+                🔥 Transfer News: Kvaratshkelia to Real Madrid? &nbsp;&nbsp;&nbsp; 
+                🏆 Champions League Final this Sunday! &nbsp;&nbsp;&nbsp; 
+                🐐 Ronaldo close to signing new Al Nassr deal. &nbsp;&nbsp;&nbsp; 
+                🔴 Salah extends contract with Liverpool! &nbsp;&nbsp;&nbsp; 
+                
+                🔍 Tonali under new betting investigation in Italy. &nbsp;&nbsp;&nbsp; 
+                🛡️ AC Milan thrash Udinese 4–0 in Serie A. &nbsp;&nbsp;&nbsp; 
+                ⚡ Xavi Simons leads RB Leipzig past Wolfsburg. &nbsp;&nbsp;&nbsp; 
+                🔧 Arteta hints at Havertz return for Arsenal. &nbsp;&nbsp;&nbsp; 
+                💥 Haaland returns with winner against Spurs.
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

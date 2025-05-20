@@ -1,0 +1,70 @@
+nav{
+    background-color: black;
+    background-size:contain;
+    color:white;
+    padding: 20px;
+    font-size:20px;
+    border-bottom:4px solid white ;
+}
+
+body{
+    margin: 0;
+    
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.bot{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.item{
+    margin-right: 80px;
+    color: lightgray;
+}
+
+.dynamicimg{
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 10px;
+    background-color: black;
+    margin-bottom: 0px;
+    cursor: pointer;
+    
+}
+.text{
+    font-size: larger;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover{
+    text-decoration:none;
+    color:inherit;
+}
+
+a:visited{
+    text-decoration: none;
+    color:inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
