@@ -1,4 +1,4 @@
-/* Make page fill entire viewport */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -8,7 +8,7 @@ html, body {
 }
 
 
-/* Background image */
+
 #image {
     position: absolute;
     top: 0; 
@@ -20,7 +20,7 @@ html, body {
     z-index: 0;
 }
 
-/* Title styling */
+
 .title {
     position: relative;
     z-index: 1;
@@ -32,9 +32,7 @@ html, body {
     margin-top: 3px;
 }
 
-/* Form area covers full page height */
-/* Form container adapts to content height */
-/* Scrollable form container */
+
 form {
     display: flex;
     flex-direction: column;
@@ -62,7 +60,6 @@ form {
 }
 
 
-/* Inputs and buttons */
 .c {
     padding: 10px;
     font-size: 18px;
@@ -76,7 +73,7 @@ form {
     margin: 10px 0;
 }
 
-/* Button styles */
+
 button.c {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
